@@ -14,12 +14,12 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    # Build Docker image from the Backend directory
+    # Build Docker image for the backend
     - name: Build Docker Image
       run: |
         docker build -t mlops-backend:latest -f Backend/Dockerfile Backend/
 
-    # Run the backend container
+    # Start the backend container
     - name: Start Backend Container
       run: |
         docker run -d --name mlops-backend \
@@ -29,7 +29,7 @@ jobs:
           mlops-backend:latest
         sleep 10  # Wait for the server to start
 
-    # Set up Python for testing
+    # Set up Python for running tests
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -46,7 +46,7 @@ jobs:
       env:
         BASE_URL: "http://localhost:5000"
       run: |
-        pytest tests/
+        pytest Backend/tests/
         
     # Print backend logs for debugging
     - name: Print Backend Logs

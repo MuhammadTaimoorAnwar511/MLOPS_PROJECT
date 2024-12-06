@@ -21,12 +21,12 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    # Build the Docker image
+    # Build the Docker image from the Backend directory
     - name: Build Docker Image
       run: |
-       docker build -t taimooranwar/mlops-backend:latest .
+        docker build -t taimooranwar/mlops-backend:latest -f Backend/Dockerfile Backend/
 
-    # Push the Docker image to Docker Hubl
+    # Push the Docker image to Docker Hub
     - name: Push Docker Image
       run: |
-       docker push taimooranwar/mlops-backend:latest
+        docker push taimooranwar/mlops-backend:latest
