@@ -1,5 +1,5 @@
 outs:
-- md5: f7a26386ff3ee65397b30a5be95d0815
-  size: 11354
+- md5: c564c6bcb0aa53e3126d6f41b95faa4f
+  size: 1899
   hash: md5
   path: bitcoin_prices_cleaned.csv
