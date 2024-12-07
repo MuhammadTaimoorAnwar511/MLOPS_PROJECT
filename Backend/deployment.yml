@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlops-backend
+  labels:
+    app: mlops-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mlops-backend
+  template:
+    metadata:
+      labels:
+        app: mlops-backend
+    spec:
+      containers:
+        - name: mlops-backend
+          image: taimooranwar/mlops-backend:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: FLASK_RUN_HOST
+              value: "0.0.0.0"
+            - name: FLASK_RUN_PORT
+              value: "5000"
+            - name: MONGO_URI
+              value: "mongodb+srv://i211232:i211232@cluster0.ogy3x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+            - name: JWT_SECRET_KEY
+              value: "secret"
