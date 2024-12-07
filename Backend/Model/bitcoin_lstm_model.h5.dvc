@@ -1,5 +1,5 @@
 outs:
-- md5: c79646d1856af0a07bfbd362bfcaba5f
-  size: 408264
+- md5: 02ada27574146bd4f4e4ec3e30683eae
+  size: 407408
   hash: md5
   path: bitcoin_lstm_model.h5

@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  backend:
+    image: taimooranwar/mlops-backend:latest  # Backend Docker Hub image
+    container_name: mlops-backend
+    environment:
+      - MONGO_URI=mongodb+srv://i211232:i211232@cluster0.ogy3x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - JWT_SECRET_KEY=secret
+    ports:
+      - "5000:5000"  # Map host port 5000 to container port 5000
+    restart: always  # Restart the container if it fails
+
+  frontend:
+    image: taimooranwar/mlops-frontend:latest  # Frontend Docker Hub image
+    container_name: mlops-frontend
+    ports:
+      - "80:80"  # Map host port 80 to container port 80
+    restart: always  # Restart the container if it fails
+    depends_on:
+      - backend  # Frontend depends on the backend service

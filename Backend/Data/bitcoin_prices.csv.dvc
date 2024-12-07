@@ -1,5 +1,5 @@
 outs:
-- md5: e5853d87ba5c65aaa1e365207e455555
-  size: 13672
+- md5: 94f71b073b84e71022612bba057368b6
+  size: 13861
   hash: md5
   path: bitcoin_prices.csv
