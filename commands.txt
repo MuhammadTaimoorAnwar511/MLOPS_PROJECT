@@ -1,0 +1,18 @@
+git rm --cached Backend/Data/*.csv
+git rm --cached Backend/Model/*.h5
+git rm --cached Backend/Model/*.pkl
+git rm --cached Backend/credentials.json
+git rm --cached Backend/token.json
+=
+git add .gitignore
+git commit -m "Update .gitignore to exclude sensitive and large files"
+=
+git add Backend/.dvc/config
+git add Backend/Data/bitcoin_prices.csv.dvc
+git add Backend/Data/bitcoin_prices_cleaned.csv.dvc
+git add Backend/Model/lstm_model_metrics.json
+git add Backend/data_fetcher.py
+git commit -m "Update DVC tracking and data fetcher"
+=
+git push origin main
+=
