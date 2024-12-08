@@ -1,4 +1,4 @@
-name: Test API Routes
+name: Backend Testing
 
 on:
   push:
